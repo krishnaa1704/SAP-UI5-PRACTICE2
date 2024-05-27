@@ -1,0 +1,21 @@
+<mvc:View
+   controllerName="ui5.walkthrough.controller.InvoiceList"
+   xmlns="sap.m"
+   xmlns:list="sap.m.List"
+   xmlns:mvc="sap.ui.core.mvc">
+   <List
+      id="invoiceList"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{invoice>/Invoices}">
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>invoiceListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField 
+               width="50%" 
+               search=".onFilterInvoices"/>
+         </Toolbar>
+      </headerToolbar>
+    </List>
+</mvc:View>

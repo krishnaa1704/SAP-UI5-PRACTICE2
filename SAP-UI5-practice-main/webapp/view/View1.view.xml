@@ -1,0 +1,262 @@
+<mvc:View xmlns:f2="sap.f" xmlns:f="sap.ui.layout.form" xmlns:codeeditor="sap.ui.codeeditor" xmlns:unified="sap.ui.unified" xmlns:ndc="sap.ndc" controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+     xmlns:fiori="sap.ui.webc.fiori"
+     xmlns:list="sap.m.List"
+    >
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Button text="trts"></Button>
+            <Input liveChange="handlelivechange" type= "Number" id="first"/>
+        </content>
+        <List headerText="Input" >
+		<InputListItem label="WLAN">
+			<Switch />
+		</InputListItem>
+        <InputListItem label="Flight mode">
+        <CheckBox selected="false"></CheckBox>
+        </InputListItem>
+        <InputListItem label="Price (EUR)">
+			<Input
+				placeholder="Price"
+				type="Number" />
+		</InputListItem>
+        <InputListItem label="Volume">
+        <Slider min="0" max= "10" value="7" width= "300px" /></InputListItem>
+        </List>
+
+        <!--Message-->
+        <Input type="Number" id="num"></Input>
+         <Button
+        id="yourButtonId"
+        text="Show Message Toast"
+        press="onMouseOver"/>
+
+        <!--condition and message toast-->
+        <Input type="Number" id="check"></Input>
+        <Button text="Submit" id="btn" press="check"></Button>
+
+        <!--Tooltip and emphasized-->
+        <Title width="100%" />
+        <Button text="Hello" tooltip="Hii" type="Emphasized" width="10%"></Button>
+
+        <!--Message strip-->
+        <MessageStrip
+            text="Default (Information) with default icon and close button:"
+			showIcon="true"
+			showCloseButton="true">
+        </MessageStrip>
+        <MessageStrip
+			text="Error with default icon and close button:"
+			type="Error"
+			showIcon="true"
+			showCloseButton="true">
+		</MessageStrip>
+        <MessageStrip
+			text="Warning with default icon and close button:"
+			type="Warning"
+			showIcon="true"
+			showCloseButton="true">
+		</MessageStrip>
+
+        <!--Image when press button-->
+        <ToggleButton text="Image" press="image"></ToggleButton>
+        <Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" visible="false" id="img" />
+
+        <!--Tile-->
+        <Title width="100%"></Title>
+            <GenericTile header="Application" subheader="Manager" url="https://sapui5.hana.ondemand.com/#/entity/sap.m.StandardTile/sample/sap.m.sample.TileContainer/code">
+            <TileContent >
+            <ImageContent src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png"></ImageContent>
+            </TileContent>  
+            </GenericTile>
+        <Title width="100%" />
+
+        <!--SlideTile-->
+        <SlideTile transitionTime="100" displayTime="500">
+            <GenericTile frameType="TwoByOne" backgroundImage="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1200px-SAP_2011_logo.svg.png">
+            <TileContent footer="Apr 17,2020">
+            <NewsContent
+                            contentText="Wind Map: Monitoring Real-Time and Forecasted Wind Conditions across the Globe"
+                            subheader="Today, SAP News" />
+            </TileContent>
+            </GenericTile>
+            <GenericTile frameType="TwoByOne" backgroundImage="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1200px-SAP_2011_logo.svg.png">
+            <TileContent footer="June 12,2021">
+            <NewsContent
+                            contentText="SAP Unveils Powerful New Player Comparision Tool Exclusively on NFL.com"
+                            subheader="Today, SAP News" />
+            </TileContent>
+            </GenericTile>
+        </SlideTile>
+
+        <!--TabHeader-->
+            <IconTabHeader mode="Inline">
+            <items>
+            <IconTabFilter id="info" text="Info" count="3" icon="sap-icon://information"/>
+            <IconTabFilter id="attachments" text="Attachments" count="13" icon="sap-icon://chain-link" />
+            <IconTabFilter id="people" text="People" count="34" icon="sap-icon://family-care"/>
+            </items>
+            </IconTabHeader>
+             
+        <!--Barcodescanner-->   
+           <Title width="100%" />
+           <ndc:BarcodeScannerButton ></ndc:BarcodeScannerButton>   
+        
+        <!--searchfield-->
+          <Title width="100%"/>
+          <SearchField ></SearchField>
+
+        <!--calendar-->
+        <unified:Calendar ></unified:Calendar> 
+
+        <!--Panel-->
+        <Panel id="_IDGenPanel1" expandable="true" headerText="Panel with list"  >
+        <content>
+            <List id="_IDGenList1">
+            <items>
+            <StandardListItem text="product one"></StandardListItem>
+            <StandardListItem text="product two"></StandardListItem>
+            <StandardListItem text="product three"></StandardListItem>
+            <StandardListItem text="First Item"/>
+            </items>
+            </List>
+            </content>
+        </Panel>
+
+        <!--FeedInput-->
+        <Title width="100%"></Title>
+        <FeedInput post="onPost" showIcon="false" />
+        
+        <!--carousel-->
+        <Carousel  loop="true" width="50%" height="50%">
+		<Image src="https://cache.careers360.mobi/media/article_images/2022/11/30/SAP-Full-form.webp" />
+		<!-- <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlD_rzne9goyYa-MUvTujKRYKwK6Gcp-GOGLeCXPsQQZ9ENpNoCf64HrRaF3XS3s1l41w&usqp=CAU"  /> -->
+		<Image src= "https://www.goodworklabs.com/wp-content/uploads/2017/09/1b_5-SAP-Softwares-Every-Industry-Should-Be-Utilising.png"/>
+        </Carousel>
+
+        <!--Code Editor-->
+        <content>
+         <Title text="Code Editor" />
+         <codeeditor:CodeEditor value="Enter your code here"></codeeditor:CodeEditor>
+        </content>
+
+       <!--progress indicator-->
+        <content>
+        <Title text="Progress indicator" width="100%"></Title>
+            <ProgressIndicator displayValue="Success" state="Success" percentValue="73"></ProgressIndicator>
+            <ProgressIndicator displayValue="Error" state="Error" percentValue="29"></ProgressIndicator>
+            <ProgressIndicator displayValue="Warning" state="Warning" percentValue="49"></ProgressIndicator>
+        </content>    
+    
+      <!--date picker-->
+        <content>
+        <Title text="Date picker" width="100%"></Title>
+        <DatePicker placeholder="Enter a date"></DatePicker>
+
+      <!--Side Navigation-->
+        <fiori:SideNavigation id="nav">
+            <fiori:SideNavigationItem text="Home" icon="sap-icon://home" />
+            <fiori:SideNavigationItem text="People" icon="sap-icon://group" />
+            <fiori:SideNavigationItem text="Location" icon="sap-icon://locate-me" />
+            <fiori:SideNavigationItem text="Events" icon="sap-icon://calendar" />
+            <fiori:fixedItems>
+                <fiori:SideNavigationItem icon="sap-icon://chain-link" text="Useful Links" />
+                <fiori:SideNavigationItem icon="sap-icon://history" text="History" />
+            </fiori:fixedItems>
+        </fiori:SideNavigation>
+        <Button text="Collapse" press="onClick"></Button>
+       <!-- <core:Fragment fragmentName="project1.view.View" type="XML"/> -->
+
+       <!--Busy indicator-->
+        <BusyIndicator text="... something is happening" class="sapUiTinyMarginBottom" />
+            <HBox justifyContent="Start" alignItems="Center" />
+                <BusyIndicator size="3em" />
+
+      <!--DateTimeInput-->
+      	<VBox class="sapUiSmallMargin">
+		<MessageStrip
+		text="Deprecated since version 1.32.8. Instead, dedicated sap.m.DatePicker, sap.m.TimePicker or sap.m.DateTimePicker controls should be used."
+		type="Warning"
+		class="sapUiSmallMarginTop sapUiSmallMarginBottom"
+		showIcon="true" />
+		<Label text="Date" labelFor="DTI1"/>
+		<DateTimeInput
+			id="DTI1"
+			type="Date"
+			placeholder="Enter Date"
+			class="sapUiSmallMarginBottom" />
+		<Label text="Time" labelFor="DTI2"/>
+		<DateTimeInput
+			id="DTI2"
+			type="Time"
+			placeholder="Enter Time"
+			class="sapUiSmallMarginBottom" />
+		<Label text="Date &amp; Time" labelFor="DTI3"/>
+		<DateTimeInput
+			id="DTI3"
+			type="DateTime"
+			placeholder="Enter Date &amp; Time"
+			class="sapUiSmallMarginBottom" />
+	    </VBox>
+      <!--Property Binding-->
+        <f:SimpleForm >
+        <Label text="krishna" />
+        <Input id="textId" value="{data>/age}"/>
+        </f:SimpleForm>
+
+     <!--Element Binding-->
+        <f:SimpleForm >
+        <Label text="Bind" />
+        <Input id="inId" value="{data>/phoneNumbers/1/type}" />
+        </f:SimpleForm>
+    
+     <!-- Aggregation Binding -->
+        <Table items="{
+            path:'data>/phoneNumbers'
+        }">
+        <columns>
+            <Column >
+                <Text text="Number"></Text>
+            </Column>
+            <Column >
+                <Text text="type"></Text>
+            </Column>
+        </columns>
+        <items>
+        <ColumnListItem >
+        <cells>
+        <Text text="{data>number}"></Text>
+        <Text text="{data>type}"></Text>
+        </cells>
+
+        </ColumnListItem>
+        </items>
+    
+        </Table>
+
+     <!--Expression Binding-->
+     <Button type="{=${data>/age}!==15 ?'Reject':'Accept'}"
+      text="Save"></Button>
+      
+     <!-- <List id="invoice"
+     width="auto"
+     items="{data>/phoneNumbers}"
+      />
+      
+         <Toolbar>
+            
+            <SearchField 
+               width="50%" />
+         </Toolbar>
+      
+     </List> -->
+
+    
+
+    </content>
+
+    </Page>
+</mvc:View>
